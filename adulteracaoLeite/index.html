@@ -5,71 +5,163 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Leite e Adulteração — Guia Educativo</title>
   <style>
-    :root{--accent:#0b6fb6;--muted:#6b7280;--bg:#f7fafc;--card:#ffffff}
-    *{box-sizing:border-box}
-    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0;background:var(--bg);color:#111}
-    header{background:linear-gradient(90deg,var(--accent),#0376b4);color:#fff;padding:28px 20px}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-    header .title{font-size:22px;font-weight:700;margin:0}
-    header .subtitle{opacity:.9;margin-top:6px;font-size:14px}
-
-    nav.topnav{background:transparent;padding:12px 0}
-    .grid{display:grid;grid-template-columns:260px 1fr;gap:24px}
-    aside{position:sticky;top:20px;height:calc(100vh - 40px)}
-    .menu{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(10,20,30,0.06)}
-    .menu a{display:block;padding:10px 12px;color:var(--accent);text-decoration:none;border-radius:8px;margin-bottom:6px}
-    .menu a:hover{background:#eef9ff}
-
-    main .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(10,20,30,0.04);margin-bottom:18px}
-    h2{margin-top:0}
-    p{color:var(--muted);line-height:1.55}
-    .hero{display:flex;gap:18px;align-items:center}
-    .hero img{width:220px;border-radius:12px;object-fit:cover;box-shadow:0 8px 24px rgba(10,20,30,.08)}
-
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    table{width:100%;border-collapse:collapse}
-    table th,table td{padding:8px;border-bottom:1px solid #f0f0f0;text-align:left}
-    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#e6f5ff;color:var(--accent);font-weight:600;font-size:13px}
-
-    .figure{display:flex;gap:12px;align-items:center}
-    .figure img{width:120px;height:80px;object-fit:cover;border-radius:8px}
-
-    footer{padding:18px;text-align:center;color:var(--muted);font-size:14px}
-
-    @media (max-width:880px){
-      .grid{grid-template-columns:1fr}
-      aside{position:relative;height:auto}
-      .two-col{grid-template-columns:1fr}
-      header{padding:20px}
-      .hero img{width:160px}
+    :root {
+      --accent:#0b6fb6;
+      --muted:#6b7280;
+      --bg:#f7fafc;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box;}
+    body {
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+      margin:0;
+      background:var(--bg);
+      color:#111;
+    }
+    header {
+      background:linear-gradient(90deg,var(--accent),#0376b4);
+      color:#fff;
+      padding:28px 20px;
+      text-align:center;
+    }
+    header img.logo {
+      width:130px;
+      height:auto;
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.2);
+      margin-bottom:10px;
+    }
+    header .title {
+      font-size:22px;
+      font-weight:700;
+      margin:0;
+    }
+    header .subtitle {
+      opacity:.9;
+      margin-top:6px;
+      font-size:14px;
     }
 
-    .actions{display:flex;gap:8px;flex-wrap:wrap}
-    button{background:var(--accent);color:#fff;border:0;padding:10px 12px;border-radius:8px;cursor:pointer}
-    button.secondary{background:#fff;color:var(--accent);border:1px solid rgba(11,111,182,.12)}
+    .container{max-width:1100px;margin:0 auto;padding:24px;}
+    .grid{display:grid;grid-template-columns:260px 1fr;gap:24px;}
+    aside{position:sticky;top:20px;height:calc(100vh - 40px);}
+    .menu{
+      background:var(--card);
+      padding:14px;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(10,20,30,0.06);
+    }
+    .menu a{
+      display:block;
+      padding:10px 12px;
+      color:var(--accent);
+      text-decoration:none;
+      border-radius:8px;
+      margin-bottom:6px;
+      transition:background .2s;
+    }
+    .menu a:hover{background:#eef9ff;}
 
-    .cite{font-size:13px;color:#555;margin-top:8px}
+    main .card{
+      background:var(--card);
+      padding:18px;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(10,20,30,0.04);
+      margin-bottom:18px;
+    }
+    h2{margin-top:0;}
+    p{color:var(--muted);line-height:1.6;}
+    .hero{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      align-items:center;
+      justify-content:center;
+    }
+    .hero img{
+      width:280px;
+      border-radius:16px;
+      object-fit:cover;
+      box-shadow:0 8px 24px rgba(10,20,30,.12);
+    }
+
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    table{width:100%;border-collapse:collapse;}
+    table th,table td{
+      padding:8px;
+      border-bottom:1px solid #f0f0f0;
+      text-align:left;
+    }
+
+    .figure{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      margin-top:18px;
+    }
+    .figure img{
+      width:80%;
+      max-width:420px;
+      border-radius:16px;
+      box-shadow:0 8px 24px rgba(10,20,30,.12);
+      object-fit:cover;
+    }
+    .cite{
+      font-size:13px;
+      color:#555;
+      margin-top:8px;
+      text-align:center;
+    }
+
+    footer{
+      padding:18px;
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* Otimização para Mobile (Abaixo de 880px) */
+    @media (max-width:880px){
+      .grid{grid-template-columns:1fr;} /* Sidebar e Main content se empilham */
+      aside{position:relative;height:auto;margin-bottom:16px;} /* Sidebar se torna um bloco acima do conteúdo */
+      .menu{padding:10px;}
+      .two-col{grid-template-columns:1fr;} /* Colunas se empilham */
+      
+      .hero{flex-direction:column;} /* Otimiza o layout do Hero para telas menores */
+      .hero img{width:100%; max-width:280px; order:-1; margin-bottom:10px;} /* Imagem primeiro no Hero */
+      
+      .container{padding:16px;}
+      header {padding:20px 12px;}
+      header img.logo {width:100px;}
+      header .title {font-size:20px;}
+      header .subtitle {font-size:13px;}
+      
+      main .card{padding:16px;}
+      h2{font-size:22px;}
+      .figure img{width:100%; max-width:100%;} /* Imagens de figura usam toda a largura */
+    }
+
+    /* Otimização para Telas muito pequenas (Abaixo de 480px) */
+    @media (max-width:480px){
+      .actions {flex-direction: column;}
+      button{width:100%;}
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="container">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <div>
-          <h1 class="title">Leite e Adulteração — Guia Educativo</h1>
-          <div class="subtitle">Resumo didático com tipos de leite, composição, fraudes e métodos de detecção</div>
-        </div>
-        <div class="actions">
-          <button onclick="printPDF()">Salvar / Imprimir (PDF)</button>
-          <button class="secondary" onclick="scrollToSection('references')">Referências</button>
-        </div>
-      </div>
+    <img src="img/logo_trajano.png" alt="Logo da instituição" class="logo">
+    <h1 class="title">Leite e Adulteração — Guia Educativo</h1>
+    <div class="subtitle">Resumo didático com tipos de leite, composição, fraudes e métodos de detecção</div>
+
+    <div class="actions">
+      <button onclick="printPDF()">Salvar / Imprimir (PDF)</button>
+      <button class="secondary" onclick="scrollToSection('references')">Referências</button>
     </div>
   </header>
-  <img src="/img/logo_trajano.png" alt="">
 
   <div class="container">
-    <nav class="topnav"> </nav>
     <div class="grid">
       <aside>
         <div class="menu">
@@ -89,10 +181,10 @@
           <div class="hero">
             <div>
               <h2>O que é o leite?</h2>
-              <p>Resumo: o leite é um alimento essencial, uma emulsão nutritiva rica em proteínas, cálcio e outros nutrientes. Legalmente, é o produto resultante da ordenha de vacas sadias e deve obedecer a padrões de higiene e composição.</p>
+              <p>O leite é um alimento essencial, uma emulsão nutritiva rica em proteínas, cálcio e outros nutrientes. Legalmente, é o produto resultante da ordenha de vacas sadias e deve obedecer a padrões de higiene e composição.</p>
               <p class="cite">Dica: mantenha refrigeração entre 1–5 °C para leite pasteurizado e observe prazos após abertura.</p>
             </div>
-            <img src="/img/Gemini_Generated_Image_vxts23vxts23vxts-removebg-preview.png" alt="Copo de leite">
+            <img src="img/Gemini_Generated_Image_vxts23vxts23vxts-removebg-preview.png" alt="Copo de leite">
           </div>
         </section>
 
@@ -121,17 +213,15 @@
         <section id="composicao" class="card">
           <h2>Composição Química do Leite</h2>
           <p>O leite é composto por água (86–88%), lactose (≈4,6–5%), proteínas (≈3,2–3,5%), lipídeos (≈3–4,5%), minerais e vitaminas. Os sólidos não gordurosos (SNG) devem ser ≥ 8,4%.</p>
-          <div style="margin-top:12px">
-            <table>
-              <thead><tr><th>Componente</th><th>Percentual médio</th></tr></thead>
-              <tbody>
-                <tr><td>Água</td><td>86–88%</td></tr>
-                <tr><td>Lactose</td><td>4,6–5%</td></tr>
-                <tr><td>Proteínas</td><td>3,2–3,5%</td></tr>
-                <tr><td>Gorduras</td><td>3–4,5%</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <table>
+            <thead><tr><th>Componente</th><th>Percentual médio</th></tr></thead>
+            <tbody>
+              <tr><td>Água</td><td>86–88%</td></tr>
+              <tr><td>Lactose</td><td>4,6–5%</td></tr>
+              <tr><td>Proteínas</td><td>3,2–3,5%</td></tr>
+              <tr><td>Gorduras</td><td>3–4,5%</td></tr>
+            </tbody>
+          </table>
         </section>
 
         <section id="adulteracao" class="card">
@@ -140,18 +230,16 @@
 
           <h3>Tipos comuns de adulteração</h3>
           <ul>
-            <li><strong>Adição de água:</strong> mais comum — reduz densidade e altera crioscopia.</li>
-            <li><strong>Neutralizantes:</strong> bicarbonatos e soda cáustica para mascarar acidez.</li>
-            <li><strong>Conservantes:</strong> formol, peróxido — tóxicos e ilegais.</li>
-            <li><strong>Reconstituintes:</strong> sacarose, cloretos ou amido para mascarar parâmetros físico-químicos.</li>
+            <li><strong>Adição de água:</strong> reduz densidade e altera crioscopia.</li>
+            <li><strong>Neutralizantes:</strong> bicarbonatos e soda cáustica mascaram acidez.</li>
+            <li><strong>Conservantes:</strong> formol e peróxido — tóxicos e ilegais.</li>
+            <li><strong>Reconstituintes:</strong> sacarose, cloretos ou amido mascaram parâmetros físico-químicos.</li>
             <li><strong>Outros:</strong> retirada ilegal de gordura, adição de soro, mistura de espécies e resíduos de antibióticos.</li>
           </ul>
 
-          <div class="figure" style="margin-top:10px">
-            <img src="/img/processoLeite.png" alt="Laticínio">
-            <div>
-              <p class="cite">Risco à saúde: adulterantes podem causar intoxicações e prejuízos nutricionais.</p>
-            </div>
+          <div class="figure">
+            <img src="img/processoLeite.png" alt="Processo de leite industrializado">
+            <p class="cite">Risco à saúde: adulterantes podem causar intoxicações e prejuízos nutricionais.</p>
           </div>
         </section>
 
@@ -160,65 +248,62 @@
           <p>Os testes variam entre métodos simples de rotina e técnicas instrumentais avançadas.</p>
           <h3>Métodos físico-químicos</h3>
           <ul>
-            <li><strong>Crioscopia:</strong> detecta adição de água pelo ponto de congelamento (faixa legal: −0,530 a −0,555 °C).</li>
-            <li><strong>Densidade:</strong> termolactodensímetro — identifica variações por água ou adição de sólidos.</li>
-            <li><strong>Acidez (Teste de Dornic):</strong> identifica deterioração; neutralizantes alteram esse valor.</li>
-            <li><strong>Testes específicos:</strong> amido (Lugol), sacarose (reativos), carbonatos/bicarbonatos (pH).</li>
+            <li><strong>Crioscopia:</strong> detecta adição de água pelo ponto de congelamento (−0,530 a −0,555 °C).</li>
+            <li><strong>Densidade:</strong> identifica variações por água ou adição de sólidos.</li>
+            <li><strong>Acidez (Teste de Dornic):</strong> indica deterioração; neutralizantes alteram esse valor.</li>
+            <li><strong>Outros testes:</strong> amido (Lugol), sacarose (reativos), carbonatos/bicarbonatos (pH).</li>
           </ul>
 
           <h3>Métodos instrumentais</h3>
           <ul>
-            <li>FTIR/NIR — análise simultânea de componentes e detecção de adulterantes.</li>
-            <li>Cromatografia (HPLC) — detecta melamina e outros contaminantes.</li>
-            <li>Eletroforese, PCR — identificação de proteínas e DNA de espécies diferentes.</li>
-            <li>Biossensores e sensores eletroquímicos — tecnologias emergentes para triagem em campo.</li>
+            <li>FTIR/NIR — análise simultânea de componentes e adulterantes.</li>
+            <li>Cromatografia (HPLC) — detecta melamina e contaminantes.</li>
+            <li>Eletroforese e PCR — identificam proteínas e DNA de espécies diferentes.</li>
+            <li>Biossensores — tecnologias emergentes para triagem em campo.</li>
           </ul>
         </section>
 
         <section id="fermentacao" class="card">
           <h2>Fermentação láctica</h2>
-          <p>Processo anaeróbico usado por bactérias como <em>Lactobacillus</em> e <em>Streptococcus</em> para produzir ácido láctico a partir da glicólise do açúcar. É a base para iogurte, queijos e kefir — este último com microflora mista incluindo leveduras.</p>
+          <p>Processo anaeróbico realizado por bactérias como <em>Lactobacillus</em> e <em>Streptococcus</em> para produzir ácido láctico. É a base de iogurtes, queijos e kefir, que combina bactérias e leveduras.</p>
           <div class="figure">
-            <img src="/img/kfir.png" alt="Derivados lácteos">
-            <div>
-              <p class="cite">Kefir: fermentação mista que produz ácido láctico, etanol e CO₂ em pequena quantidade.</p>
-            </div>
+            <img src="img/kfir.png" alt="Derivados lácteos fermentados">
+            <p class="cite">Kefir: fermentação mista que produz ácido láctico, etanol e CO₂.</p>
           </div>
         </section>
 
         <section id="casos" class="card">
           <h2>Casos Reais</h2>
-          <p>Exemplos notórios: adulteração com soda cáustica, formol e peróxido (casos no Brasil entre 2007–2013) e o escândalo da melamina na China (2008), que levou a ferimentos e mortes de bebês.</p>
+          <p>Adulteração com soda cáustica, formol e peróxido (Brasil 2007–2013) e o caso da melamina na China (2008), que afetou centenas de milhares de crianças.</p>
         </section>
 
         <section id="references" class="card">
           <h2>Referências</h2>
-          <p>Uma lista extensa de referências técnicas e normativas (MAPA, artigos científicos e manuais) está disponível no documento de origem. Consulte as normas e publicações para procedimentos analíticos detalhados.</p>
-          <p class="cite">Fontes: material fornecido pelo usuário (lista bibliográfica incluída no documento original).</p>
+          <p>Fontes incluem normas do MAPA, artigos científicos e materiais didáticos do documento original.</p>
+          <p class="cite">Material fornecido pelo usuário — lista completa disponível no documento original.</p>
         </section>
-
       </main>
     </div>
   </div>
 
   <footer>
-    Criado automaticamente — abra este arquivo localmente no navegador para visualizar. Use o botão "Salvar / Imprimir (PDF)" para exportar como PDF.
+    Criado automaticamente — abra este arquivo localmente no navegador para visualizar. Use o botão “Salvar / Imprimir (PDF)” para exportar como PDF.
   </footer>
 
   <script>
     function scrollToSection(id){
-      var el = document.getElementById(id);
+      const el = document.getElementById(id);
       if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
     }
     function printPDF(){
       window.print();
     }
-    // Improve menu link behavior
-    document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click', e=>{
-      e.preventDefault();
-      var href = a.getAttribute('href').replace('#','');
-      scrollToSection(href);
-    }));
+    document.querySelectorAll('.menu a').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        scrollToSection(a.getAttribute('href').substring(1));
+      });
+    });
   </script>
 </body>
 </html>
